@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gameoflife;
+package com.akinevz.gameoflife;
 
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 /**
@@ -13,11 +14,11 @@ import java.util.stream.Stream;
  */
 public final class GameOfLife {
 
-    static GameOfLife instance;
+    private static GameOfLife instance;
 
     public static String[] getSeedNames() {
         return Stream.of(new String[]{"Reset"}, Seed.values()).flatMap(Stream::of)
-                .map((Object s) -> s.toString())
+                .map(Object::toString)
                 .toArray(String[]::new);
     }
 
